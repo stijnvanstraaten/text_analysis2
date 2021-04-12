@@ -16,7 +16,7 @@ def exercise1(tokenized_sentences):
     min = [1000, ""]
     # These exceptions prevent that abbreviations/non-sentences get seen as sentences
     exceptions = ["I.", "II.", "III.", "IV.", "V.", "VI.", "VII.", "VIII.", "IX.", "X.", "XI.", "XII.", "K.", "4.",
-                  "4.'", "O.\"", "4d.", "B.\"", "B.'"]
+                  "4.'", "O.\"", "4d.", "B.\"", "B.'", "'Mr."]
     for sentence in tokenized_sentences:
         if sentence not in exceptions:
             tokenized_words.append(nltk.word_tokenize(sentence))
