@@ -1,3 +1,96 @@
+Exercise 1:
+
+a:
+('Covent', 'Garden')
+('HEADED', 'LEAGUE')
+('RED', 'HEADED')
+('Yours', 'faithfully')
+('co', 'operation')
+('lime', 'cream')
+('DEAR', 'MR')
+('SHERLOCK', 'HOLMES')
+('copper', 'beeches')
+('friendly', 'footing')
+('purely', 'nominal')
+('Hotel', 'Cosmopolitan')
+('William', 'Crowder')
+('11', '15')
+('Godfrey', 'Norton')
+('guinea', 'fee')
+('Lone', 'Star')
+('pea', 'jacket')
+('Tottenham', 'Court')
+('Copper', 'Beeches')
+
+b:
+('Briony', 'Lodge')
+('Copper', 'Beeches')
+('Covent', 'Garden')
+('HEADED', 'LEAGUE')
+('RED', 'HEADED')
+('Swandam', 'Lane')
+('Yours', 'faithfully')
+('co', 'operation')
+('lime', 'cream')
+('Scotland', 'Yard')
+('Lone', 'Star')
+('Stoke', 'Moran')
+('o', 'clock')
+('Godfrey', 'Norton')
+('Irene', 'Adler')
+('Lysander', 'Stark')
+('DEAR', 'MR')
+('SHERLOCK', 'HOLMES')
+('copper', 'beeches')
+('friendly', 'footing')
+
+c:
+('of', 'the')
+('in', 'the')
+('I', 'have')
+('to', 'the')
+('that', 'I')
+('at', 'the')
+('and', 'I')
+('to', 'be')
+('upon', 'the')
+('and', 'the')
+('I', 'was')
+('I', 'am')
+('with', 'a')
+('It', 'is')
+('of', 'a')
+('I', 'had')
+('it', 'is')
+('was', 'a')
+('that', 'he')
+('it', 'was')
+
+Exercise 2:
+
+Manually POS tag:
+
+Penn Treebank POS tag:
+
+Peter really liked the movies and warm pop-corn. He would never bring Mira with him, though .
+NNP   RB     VBD   DT  NNS    CC  JJ   NN        PP MD    RB    VV    NP   IN   PPZ  IN
+NNS : noun plural
+RB : adverb
+VBD : verb past tense
+DT : determiner
+NPS : proper noun plural
+CC : coordinating conjunction
+JJ : adjective
+NN : noun singular or mass
+PP : personal pronoun
+MD : modal
+VV : verb base form
+NP : proper noun
+IN : preposition
+PPZ : possessive pronoun
+
+Brown corpus POS tag:
+
 Peter NP
 really RB
 liked VBD
@@ -18,7 +111,7 @@ him PPO
 though CS
 . .
 
----------------------------------------------------------------------------------------------------
+NLTK universal POS tag:
 
 Peter  -> NOUN
 really -> ADV
@@ -40,21 +133,63 @@ him -> PRON
 though -> CONJ
 . -> . (punctuation)
 
-------------------------------------------------------------------------------------------------------
+2a:
+There are 57169 words.
+There are 3886 sentences.
 
-Peter really liked the movies and warm pop-corn. He would never bring Mira with him, though .
-NNP   RB     VBD   DT  NNS    CC  JJ   NN        PP MD    RB    VV    NP   IN   PPZ  IN
-NNS : noun plural
-RB : adverb
-VBD : verb past tense
-DT : determiner
-NPS : proper noun plural
-CC : coordinating conjunction
-JJ : adjective
-NN : noun singular or mass
-PP : personal pronoun
-MD : modal
-VV : verb base form
-NP : proper noun
-IN : preposition
-PPZ : possessive pronoun
+2b:
+The 50th word is grim and the POS-tag is JJ
+The 75th word is from and the POS-tag is IN
+
+2c:
+There are 169 different POS tags in this Brown category
+
+2d:
+The top 15 words are: {'.': 3326, ',': 2805, 'the': 2573, 'to': 1284, 'and': 1215, 'a': 1136, 'of': 903, 'was': 820, '``': 740, "''": 738, 'he': 670, '?': 664, 'in': 658, 'I': 583, 'his': 529}
+
+2e:
+The top 15 tags are: {'NN': 6461, 'IN': 4692, '.': 4322, 'AT': 4321, ',': 2805, 'VBD': 2645, 'RB': 2459, 'JJ': 2109, 'VB': 2026, 'PPS': 1767, 'NP': 1737, 'CC': 1692, 'NNS': 1435, 'PPO': 1207, 'VBN': 1161}
+
+2f:
+Most frequent POS tag(s) in the 20th sentence: ['PPSS+BER', '*', 'AT', 'NN', 'TO', 'VB', 'JJ', '.']
+Most frequent POS tag(s) in the 40th sentence: PPSS
+
+2g:
+The most frequent adverb is: back
+
+2h:
+The most frequent adjective is: old
+
+2i:
+Which POS tags are most frequent for 'so': {'QL', 'CS', 'RB'}
+
+2j:
+The most frequent POS tag for 'so': QL
+
+2k:
+An example sentence with 'so' with the POS tag 'RB': [("I'll", 'PPSS+MD'), ('bet', 'VB'), ('he', 'PPS'), ("wouldn't", 'MD*'), ('be', 'BE'), ('pleased', 'VBN'), ('if', 'CS'), ('a', 'AT'), ('rumdum', 'NN'), ('like', 'CS'), ('me', 'PPO'), ('were', 'BED'), ('to', 'TO'), ('ask', 'VB'), ('his', 'PP$'), ('daughter', 'NN'), ('for', 'IN'), ('a', 'AT'), ('date', 'NN'), ('--', '--'), ('I', 'PPSS'), ('mean', 'VB'), (',', ','), ('after', 'CS'), ("I'm", 'PPSS+BEM'), ('out', 'IN'), ('of', 'IN'), ('the', 'AT'), ('hospital', 'NN'), (',', ','), ('a', 'AT'), ('month', 'NN'), ('or', 'CC'), ('so', 'RB'), ('from', 'IN'), ('now', 'RB'), ("''", "''"), ('.', '.')]
+An example sentence with 'so' with the POS tag 'CS': [('I', 'PPSS'), ('put', 'VB'), ('in', 'RP'), ('new', 'JJ'), ('batteries', 'NNS'), ('so', 'CS'), ('as', 'CS'), ('to', 'TO'), ('be', 'BE'), ('certain', 'JJ'), ("I'd", 'PPSS+MD'), ('have', 'HV'), ('plenty', 'NN'), ('of', 'IN'), ('power', 'NN'), ('and', 'CC'), ('on', 'IN'), ('my', 'PP$'), ('way', 'NN'), ('out', 'RP'), ('walked', 'VBD'), ('over', 'RP'), ('to', 'IN'), ('the', 'AT'), ('regular', 'JJ'), ('parking', 'VBG'), ('stalls', 'NNS'), ('and', 'CC'), ('stood', 'VBD'), ('looking', 'VBG'), ('at', 'IN'), ('them', 'PPO'), ('thoughtfully', 'RB'), ('.', '.')]
+An example sentence with 'so' with the POS tag 'QL': [("We've", 'PPSS+HV'), ('always', 'RB'), ('been', 'BEN'), ('so', 'QL'), ('close', 'JJ'), ("''", "''"), ('.', '.')]
+
+2l:
+The most likely preceding POS tag to the word 'so' with POS tag 'RB': CC
+The most likely following POS tag to the word 'so' with POS tag 'RB': .
+The most likely preceding POS tag to the word 'so' with POS tag 'CS': ,
+The most likely following POS tag to the word 'so' with POS tag 'CS': CS
+The most likely preceding POS tag to the word 'so' with POS tag 'QL': BEDZ
+The most likely following POS tag to the word 'so' with POS tag 'QL': AP
+
+3:
+Our home made pos tagger (only the first 10 words to show that it works): [('THE', 'DT'), ('ADVENTURES', 'NNP'), ('OF', 'NNP'), ('SHERLOCK', 'NNP'), ('HOLMES', 'NNP'), ('by', 'IN'), ('SIR', 'NNP'), ('ARTHUR', 'NNP'), ('CONAN', 'NNP'), ('DOYLE', 'NNP')]
+
+4:
+We used PMI to rank the top 5 most significant bigrams
+
+
+These are the top 5 bigrams (using PMI): [(')', ':'), ('``', 'UH'), ('(', 'CD'), ("''", '``'), ('``', 'FW')]
+These are the top 5 bigrams with raw frequencies: [('DT', 'NN'), ('IN', 'DT'), ('NN', 'IN'), ('PRP', 'VBD'), ('JJ', 'NN')]
+
+
+They don't look interesting, nothing unexpected happened
+When looking at the PMI and raw frequencies you can see that the PMI bigrams have a lot of punctuation whereas the raw frequencies do not have any punctuation
+These bigrams could be used for search engines (to auto-fill queries) and to see the meaning of words (for example the meaning of 'so')

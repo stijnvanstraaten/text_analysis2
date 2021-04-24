@@ -1,4 +1,4 @@
-# exercise1.py
+# part1.py
 # 19-04-2021
 # Huub exel, Rutger van der Hart, Stijn van Straaten
 
@@ -30,10 +30,9 @@ def main():
 
     bigram_measures = nltk.collocations.BigramAssocMeasures()
     find = BigramCollocationFinder.from_words(tokenized_text)
-    # You could use the following line to reduce ambiguity, by 
-    # removing bigrams with a frequency lower than 3.
-    #find.apply_freq_filter(3)
-    print("Exercise 1.1:")
+
+    find.apply_freq_filter(3)
+    print("Exercise 1:")
     print("\na:")
     pmi(bigram_measures, find)
     print("\nb:")
