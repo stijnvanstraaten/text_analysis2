@@ -1,0 +1,60 @@
+Peter NP
+really RB
+liked VBD
+the AT
+movies NNS
+and CC
+warm JJ
+pop-corn NN
+. .
+He PPS
+would MD
+never RB
+bring VB
+Mira NP
+with IN
+him PPO
+, ,
+though CS
+. .
+
+---------------------------------------------------------------------------------------------------
+
+Peter  -> NOUN
+really -> ADV
+liked -> VERB
+the -> DET (it’s an article (lidwoord) but there is no such thing with these tags)
+movies -> NOUN
+and -> CONJ
+warm -> ADJ
+pop-corn -> NOUN
+. -> . (punctuation)
+He -> PRON
+would -> VERB
+never -> ADV
+bring -> VERB
+Mira -> NOUN
+with -> ADP
+him -> PRON
+, -> . (punctuation)
+though -> CONJ
+. -> . (punctuation)
+
+------------------------------------------------------------------------------------------------------
+
+Peter really liked the movies and warm pop-corn. He would never bring Mira with him, though .
+NNP   RB     VBD   DT  NNS    CC  JJ   NN        PP MD    RB    VV    NP   IN   PPZ  IN
+NNS : noun plural
+RB : adverb
+VBD : verb past tense
+DT : determiner
+NPS : proper noun plural
+CC : coordinating conjunction
+JJ : adjective
+NN : noun singular or mass
+PP : personal pronoun
+MD : modal
+VV : verb base form
+NP : proper noun
+IN : preposition
+PPZ : possessive pronoun
