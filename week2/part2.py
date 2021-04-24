@@ -1,3 +1,7 @@
+# part2.py
+# 24-04-2021
+# Huub exel, Rutger van der Hart, Stijn van Straaten
+
 import nltk
 from nltk import *
 
