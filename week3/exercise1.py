@@ -63,8 +63,6 @@ def assignment1(text):
             if hypernymOf(synset1, science):
                 science_nouns.append(noun)
 
-
-
     print("1a:")
     print("There are {0} nouns that refer to a relative, they are:\n{1}".format(len(relative_nouns), relative_nouns))
     print("\n1b:")
@@ -72,12 +70,68 @@ def assignment1(text):
     print("\n1c:")
     print("There are {0} nouns that refer to a science, they are:\n{1}".format(len(science_nouns), science_nouns))
 
-    hypernym_list = {Synset('act.n.02'): "act", Synset('animal.n.01'): "animal", Synset('artifact.n.01'): "artifact", Synset('attribute.n.01'): "attribute", Synset('body.n.01'): "body", Synset('body.n.08'): "body", Synset('cognition.n.01'): "cognition", Synset('communication.n.01'): "communication", Synset('event.n.01'): "event", Synset('feeling.n.01'): "feeling", Synset('food.n.01'): "food", Synset('group.n.01'): "group", Synset('location.n.01'): "location", Synset('motive.n.01'): "motive", Synset('object.n.01'): "natural object", Synset('phenomenon.n.01'): "natural phenomenon", Synset('person.n.01'): "person", Synset('plant.n.02'): "plant", Synset('possession.n.01'): "possession", Synset('quantity.n.01'): "quantity", Synset('process.n.01'): "process", Synset('relation'): "relation", Synset('state.n.02'): "state", Synset('shape.n.01'): "shape", Synset('substance.n.01'): "substance", Synset('time'): "time"}
+    hypernym_dict = {wordnet.synsets("act", pos="n")[1]: "act", wordnet.synsets("animal", pos="n")[0]: "animal", wordnet.synsets('artifact', pos="n")[0]: "artifact", wordnet.synsets('attribute', pos="n")[0]: "attribute", wordnet.synsets('body', pos="n")[0]: "body", wordnet.synsets('body', pos="n")[7]: "body", wordnet.synsets('cognition', pos="n")[0]: "cognition", wordnet.synsets('communication', pos="n")[0]: "communication", wordnet.synsets('event', pos="n")[0]: "event", wordnet.synsets('feeling', pos="n")[0]: "feeling", wordnet.synsets('food', pos="n")[0]: "food", wordnet.synsets('group', pos="n")[0]: "group", wordnet.synsets('location', pos="n")[0]: "location", wordnet.synsets('motive', pos="n")[0]: "motive", wordnet.synsets('object', pos="n")[0]: "natural object", wordnet.synsets('phenomenon', pos="n")[0]: "natural phenomenon", wordnet.synsets('person', pos="n")[0]: "person", wordnet.synsets('plant', pos="n")[1]: "plant", wordnet.synsets('possession', pos="n")[0]: "possession", wordnet.synsets('quantity', pos="n")[0]: "quantity", wordnet.synsets('process', pos="n")[0]: "process", wordnet.synsets('relation', pos="n")[0]: "relation", wordnet.synsets('state', pos="n")[1]: "state", wordnet.synsets('shape', pos="n")[0]: "shape", wordnet.synsets('substance', pos="n")[0]: "substance", wordnet.synsets('time', pos="n")[0]: "time"}
+    final_list = []
+
+    for noun in noun_lemmas:
+        noun_synset_set = set()
+        synset1 = wordnet.synsets(noun, pos="n")
+
+        if synset1:
+            for i in synset1:
+                hypernym(i, hypernym_dict, noun_synset_set)
+            final_list.append([noun, noun_synset_set])
+
+    noun_one = []
+    noun_more = []
+    total_length = 0
+
+    for item in final_list:
+        if len(item[1]) == 1:
+            noun_one.append(item)
+        if len(item[1]) > 1:
+            noun_more.append(item)
+        total_length += len(item[1])
+
+    print("\n2:")
+    print("There were {0} cases of a noun only having one hypernym, for example:\n{1}".format(len(noun_one), noun_one[:3]))
+    print("\nThere were {0} cases where we had to choose between multiple hypernyms. Our system did not make any choice, we just followed all paths to the top hypernyms.\nTo make a decision you have to look at the context and make a decision for yourself, here are two examples:\n{1}".format(len(noun_more), noun_more[:2]))
+    print("\nThe average length of hypernyms per noun is: {0}".format(total_length / len(final_list)))
+
+    nounsynsets = [[wordnet.synsets("car", pos="n"), wordnet.synsets("automobile", pos="n")], [wordnet.synsets("coast", pos="n"), wordnet.synsets("shore", pos="n")], [wordnet.synsets("food", pos="n"), wordnet.synsets("fruit", pos="n")], [wordnet.synsets("journey", pos="n"), wordnet.synsets("car", pos="n")], [wordnet.synsets("monk", pos="n"), wordnet.synsets("slave", pos="n")], [wordnet.synsets("moon", pos="n"), wordnet.synsets("string", pos="n")]]
+    words = ["car<>automobile", "coast<>shore", "food<>fruit", "journey<>car", "monk<>slave", "moon<>string"]
+    scores = {}
+    index = 0
+
+    for nounsynset in nounsynsets:
+        scores[words[index]] = getMaxSim(nounsynset[0], nounsynset[1])
+        index += 1
+
+    print("\n3:")
+    for i in sorted(scores.items(), key=lambda item: item[1], reverse=True):
+        print("{0}\t\t{1}".format(i[0], i[1]))
 
 
-def hypernym(synset):
-    print(synset.hypernyms())
-    hypernym(synset.hypernyms()[0])
+def getMaxSim(synset1, synset2):
+    maxSim = None
+    for s1 in synset1:
+        for s2 in synset2:
+            sim = s1.lch_similarity(s2)
+            if maxSim is None or maxSim < sim:
+                maxSim = sim
+    return maxSim
+
+
+def hypernym(synset, hypernym_dict, noun_synset_set):
+    if synset in hypernym_dict.keys():
+        noun_synset_set.add(synset)
+    synset_hypernym = synset.hypernyms()
+    if synset_hypernym:
+        for syn_hypernym in synset_hypernym:
+            hypernym(syn_hypernym, hypernym_dict, noun_synset_set)
+
+
+
 
 
 
