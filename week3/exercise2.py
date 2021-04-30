@@ -3,6 +3,7 @@
 # Huub exel, Rutger van der Hart, Stijn van Straaten
 
 from nltk.parse import CoreNLPParser
+import nltk
 
 def NER(text):
     ner_tagger = CoreNLPParser(url='http://localhost:9000', tagtype='ner')
@@ -26,16 +27,31 @@ def NER(text):
         if i[1] == "MISC":
             misc_list.append(i[0])
 
+    print()
+
     print("The text contains {0} people, namely: {1}".format(len(person_list), person_list))
     print("The text contains {0} organizations, namely: {1}".format(len(organization_list), organization_list))
     print("The text contains {0} locations, namely: {1}".format(len(locations_list), locations_list))
     print("The text contains {0} dates, namely: {1}".format(len(date_list), date_list))
     print("The text contains {0} miscs, namely: {1}".format(len(misc_list), misc_list))
 
+
+def nouns(text):
+    nouns = set()
+    tokenized_text = nltk.word_tokenize(text)
+    tagged_text = nltk.pos_tag(tokenized_text)
+    for word in tagged_text:
+        if word[1] == "NN":
+            nouns.add(word[0])
+    print("\n3:")
+    print("These are all the nouns in the text: {0}".format(nouns))
+
+
 def main():
     with open("ada_lovelace.txt", "r") as text_open:
         text = text_open.read()
     NER(text)
+    nouns(text)
 
 
 if __name__ == "__main__":
