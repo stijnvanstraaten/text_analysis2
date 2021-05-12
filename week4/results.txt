@@ -1,0 +1,287 @@
+# Huub exel, Rutger van der Hart, Stijn van Straaten
+# 12-05-2021
+
+Most difficult cases:
+
+
+Instructions to run measures.py:
+python3 measures.py [settings] [file name of first person] [file name of second person]
+settings: if you put "1" it will calculate the scores for all entities and if you put anything except for "1" you get the interesting vs non-interesting entities scores.
+
+Huub & Stijn, interesting vs non-interesting entities:
+
+       |         T |
+       |         a |
+       |    N    g |
+       |    o    g |
+       |    n    e |
+       |    e    d |
+-------+-----------+
+  None |<1838>  33 |
+Tagged |   65 <273>|
+-------+-----------+
+(row = reference; col = test)
+
+{'None', 'Tagged'}
+TP: 2111 Counter({'None': 1838, 'Tagged': 273})
+FN: 98 Counter({'Tagged': 65, 'None': 33})
+FP: 98 Counter({'None': 65, 'Tagged': 33})
+
+{'None', 'Tagged'}
+None
+precision: 0.9658434051497635
+recall: 0.9823623730625334
+fscore: 0.9740328563857975
+Tagged
+precision: 0.8921568627450981
+recall: 0.8076923076923077
+fscore: 0.8478260869565217
+
+
+
+Huub & Stijn, all entities:
+
+     |                                  N           |
+     |         A    C    C    E    N    o    O    P |
+     |         N    I    O    N    A    n    R    E |
+     |         I    T    U    T    T    e    G    R |
+-----+----------------------------------------------+
+     |   <.>   .    .    .    .    .    2    .    . |
+ ANI |    .   <5>   .    .    .    .    3    .    . |
+ CIT |    .    .  <17>   2    .    .    3    .    . |
+ COU |    .    .    2  <79>   .    1   19    1    . |
+ ENT |    .    .    .    .  <10>   .    1    .    . |
+ NAT |    .    .    .    4    .   <8>   8    1    . |
+None |    .    .    .   14    .    1<1838>  13    5 |
+ ORG |    .    .    1    6    .    .   11  <52>   . |
+ PER |    .    .    1    .    .    .   18    3  <80>|
+-----+----------------------------------------------+
+(row = reference; col = test)
+
+{'', 'ANI', 'None', 'ENT', 'ORG', 'CIT', 'COU', 'PER', 'NAT'}
+TP: 2089 Counter({'None': 1838, 'PER': 80, 'COU': 79, 'ORG': 52, 'CIT': 17, 'ENT': 10, 'NAT': 8, 'ANI': 5, '': 0})
+FN: 120 Counter({'None': 33, 'COU': 23, 'PER': 22, 'ORG': 18, 'NAT': 13, 'CIT': 5, 'ANI': 3, '': 2, 'ENT': 1})
+FP: 120 Counter({'None': 65, 'COU': 26, 'ORG': 18, 'PER': 5, 'CIT': 4, 'NAT': 2, 'ANI': 0, 'ENT': 0, '': 0})
+
+{'', 'ANI', 'None', 'ENT', 'ORG', 'CIT', 'COU', 'PER', 'NAT'}
+
+precision: error - devision by zero
+recall: error - devision by zero
+fscore: 0
+ANI
+precision: 1.0
+recall: 0.625
+fscore: 0.7692307692307693
+CIT
+precision: 0.8095238095238095
+recall: 0.7727272727272727
+fscore: 0.7906976744186046
+COU
+precision: 0.7523809523809524
+recall: 0.7745098039215687
+fscore: 0.7632850241545894
+ENT
+precision: 1.0
+recall: 0.9090909090909091
+fscore: 0.9523809523809523
+NAT
+precision: 0.8
+recall: 0.38095238095238093
+fscore: 0.5161290322580645
+None
+precision: 0.9658434051497635
+recall: 0.9823623730625334
+fscore: 0.9740328563857975
+ORG
+precision: 0.7428571428571429
+recall: 0.7428571428571429
+fscore: 0.7428571428571429
+PER
+precision: 0.9411764705882353
+recall: 0.7843137254901961
+fscore: 0.8556149732620321
+
+----------------------------------------------------------------------------------------------
+
+Huub & Rutger, interesting vs non-interesting entities:
+
+       |         T |
+       |         a |
+       |    N    g |
+       |    o    g |
+       |    n    e |
+       |    e    d |
+-------+-----------+
+  None |<1820>  51 |
+Tagged |   52 <286>|
+-------+-----------+
+(row = reference; col = test)
+
+{'Tagged', 'None'}
+TP: 2106 Counter({'None': 1820, 'Tagged': 286})
+FN: 103 Counter({'Tagged': 52, 'None': 51})
+FP: 103 Counter({'None': 52, 'Tagged': 51})
+
+{'Tagged', 'None'}
+None
+precision: 0.9722222222222222
+recall: 0.9727418492784607
+fscore: 0.9724819663371628
+Tagged
+precision: 0.8486646884272997
+recall: 0.8461538461538461
+fscore: 0.8474074074074075
+
+
+
+Huub & Rutger, all entities:
+
+     |                                  N           |
+     |         A    C    C    E    N    o    O    P |
+     |         N    I    O    N    A    n    R    E |
+     |         I    T    U    T    T    e    G    R |
+-----+----------------------------------------------+
+     |   <.>   .    .    .    .    .    2    .    . |
+ ANI |    .   <7>   .    .    .    .    1    .    . |
+ CIT |    .    .  <19>   .    .    .    3    .    . |
+ COU |    .    .    2  <80>   .   10    8    2    . |
+ ENT |    .    .    .    .   <8>   .    3    .    . |
+ NAT |    .    .    .    7    .   <7>   7    .    . |
+None |    .    .    .   20    .    2<1820>  22    7 |
+ ORG |    .    .    1    8    .    .    9  <52>   . |
+ PER |    .    .    1    3    .    .   19    4  <75>|
+-----+----------------------------------------------+
+(row = reference; col = test)
+
+{'', 'NAT', 'ORG', 'ENT', 'ANI', 'None', 'PER', 'COU', 'CIT'}
+TP: 2068 Counter({'None': 1820, 'COU': 80, 'PER': 75, 'ORG': 52, 'CIT': 19, 'ENT': 8, 'NAT': 7, 'ANI': 7, '': 0})
+FN: 141 Counter({'None': 51, 'PER': 27, 'COU': 22, 'ORG': 18, 'NAT': 14, 'ENT': 3, 'CIT': 3, '': 2, 'ANI': 1})
+FP: 141 Counter({'None': 52, 'COU': 38, 'ORG': 28, 'NAT': 12, 'PER': 7, 'CIT': 4, 'ENT': 0, 'ANI': 0, '': 0})
+
+{'', 'NAT', 'ORG', 'ENT', 'ANI', 'None', 'PER', 'COU', 'CIT'}
+
+precision: error - devision by zero
+recall: error - devision by zero
+fscore: 0
+ANI
+precision: 1.0
+recall: 0.875
+fscore: 0.9333333333333333
+CIT
+precision: 0.8260869565217391
+recall: 0.8636363636363636
+fscore: 0.8444444444444444
+COU
+precision: 0.6779661016949152
+recall: 0.7843137254901961
+fscore: 0.7272727272727273
+ENT
+precision: 1.0
+recall: 0.7272727272727273
+fscore: 0.8421052631578948
+NAT
+precision: 0.3684210526315789
+recall: 0.3333333333333333
+fscore: 0.35
+None
+precision: 0.9722222222222222
+recall: 0.9727418492784607
+fscore: 0.9724819663371628
+ORG
+precision: 0.65
+recall: 0.7428571428571429
+fscore: 0.6933333333333334
+PER
+precision: 0.9146341463414634
+recall: 0.7352941176470589
+fscore: 0.8152173913043479
+
+----------------------------------------------------------------------------------------------
+
+Stijn & Rutger, interesting vs non-interesting entities:
+
+       |         T |
+       |         a |
+       |    N    g |
+       |    o    g |
+       |    n    e |
+       |    e    d |
+-------+-----------+
+  None |<1852>  51 |
+Tagged |   20 <286>|
+-------+-----------+
+(row = reference; col = test)
+
+{'Tagged', 'None'}
+TP: 2138 Counter({'None': 1852, 'Tagged': 286})
+FN: 71 Counter({'None': 51, 'Tagged': 20})
+FP: 71 Counter({'Tagged': 51, 'None': 20})
+
+{'Tagged', 'None'}
+None
+precision: 0.9893162393162394
+recall: 0.9732002101944298
+fscore: 0.9811920529801325
+Tagged
+precision: 0.8486646884272997
+recall: 0.934640522875817
+fscore: 0.8895800933125971
+
+
+
+Stijn & Rutger, all entities:
+
+     |                             N           |
+     |    A    C    C    E    N    o    O    P |
+     |    N    I    O    N    A    n    R    E |
+     |    I    T    U    T    T    e    G    R |
+-----+-----------------------------------------+
+ ANI |   <5>   .    .    .    .    .    .    . |
+ CIT |    .  <21>   .    .    .    .    .    . |
+ COU |    .    2  <91>   .    3    6    3    . |
+ ENT |    .    .    .   <8>   .    2    .    . |
+ NAT |    .    .    1    .   <9>   .    .    . |
+None |    2    .   17    .    7<1852>  19    6 |
+ ORG |    .    .    7    .    .    5  <58>   . |
+ PER |    .    .    2    .    .    7    .  <76>|
+-----+-----------------------------------------+
+(row = reference; col = test)
+
+{'None', 'NAT', 'CIT', 'ORG', 'ANI', 'ENT', 'COU', 'PER'}
+TP: 2120 Counter({'None': 1852, 'COU': 91, 'PER': 76, 'ORG': 58, 'CIT': 21, 'NAT': 9, 'ENT': 8, 'ANI': 5})
+FN: 89 Counter({'None': 51, 'COU': 14, 'ORG': 12, 'PER': 9, 'ENT': 2, 'NAT': 1, 'CIT': 0, 'ANI': 0})
+FP: 89 Counter({'COU': 27, 'ORG': 22, 'None': 20, 'NAT': 10, 'PER': 6, 'CIT': 2, 'ANI': 2, 'ENT': 0})
+
+{'None', 'NAT', 'CIT', 'ORG', 'ANI', 'ENT', 'COU', 'PER'}
+ANI
+precision: 0.7142857142857143
+recall: 1.0
+fscore: 0.8333333333333333
+CIT
+precision: 0.9130434782608695
+recall: 1.0
+fscore: 0.9545454545454545
+COU
+precision: 0.7711864406779662
+recall: 0.8666666666666667
+fscore: 0.8161434977578474
+ENT
+precision: 1.0
+recall: 0.8
+fscore: 0.888888888888889
+NAT
+precision: 0.47368421052631576
+recall: 0.9
+fscore: 0.6206896551724138
+None
+precision: 0.9893162393162394
+recall: 0.9732002101944298
+fscore: 0.9811920529801325
+ORG
+precision: 0.725
+recall: 0.8285714285714286
+fscore: 0.7733333333333333
+PER
+precision: 0.926829268292683
+recall: 0.8941176470588236
+fscore: 0.9101796407185628

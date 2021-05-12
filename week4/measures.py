@@ -1,3 +1,7 @@
+# measures.py
+# 12-05-2021
+# Huub exel, Rutger van der Hart, Stijn van Straaten
+
 from collections import Counter
 from nltk.metrics import ConfusionMatrix
 import os
@@ -99,4 +103,5 @@ for i in sorted(tag_set):
         fscore = 2 * (precision * recall) / float(precision + recall)
     print(i)
     print("precision: " + str(precision))
-          
+    print("recall: " + str(recall))
+    print("fscore: " + str(fscore))
