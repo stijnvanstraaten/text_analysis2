@@ -17,7 +17,7 @@
 91 93 1017 's POS
 94 102 1018 archives NNS
 102 103 1019 . .
-105 114 2001 Discovery NN  ORG https://en.wikipedia.org/wiki/Discovery_Channel
+105 114 2001 Discovery NN ORG https://en.wikipedia.org/wiki/Discovery_Channel
 115 118 2002 has VBZ
 119 123 2003 used VBN
 124 127 2004 the DT
