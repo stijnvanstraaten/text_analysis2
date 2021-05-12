@@ -42,11 +42,11 @@
 263 267 2026 fund NN
 267 268 2027 . .
 269 272 3001 Mr. NNP PER https://en.wikipedia.org/wiki/Hugo_Ch%C3%A1vez
-273 279 3002 Chavez NN https://en.wikipedia.org/wiki/Hugo_Ch%C3%A1vez
+273 279 3002 Chavez NN PER https://en.wikipedia.org/wiki/Hugo_Ch%C3%A1vez
 279 280 3003 ' ''
 281 286 3004 visit NN
 287 289 3005 to TO
-290 294 3006 Iran NN https://en.wikipedia.org/wiki/Iran
+290 294 3006 Iran NN COU https://en.wikipedia.org/wiki/Iran
 295 302 3007 follows VBZ
 303 304 3008 a DT
 305 312 3009 meeting NN
