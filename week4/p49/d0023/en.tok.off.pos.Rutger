@@ -41,9 +41,9 @@
 222 226 3012 once RB
 227 231 3013 part NN
 232 234 3014 of IN
-235 238 3015 the DT COU https://en.wikipedia.org/wiki/British_Empire
-239 246 3016 British JJ COU https://en.wikipedia.org/wiki/British_Empire
-247 253 3017 Empire NN COU https://en.wikipedia.org/wiki/British_Empire
+235 238 3015 the DT ORG https://en.wikipedia.org/wiki/British_Empire
+239 246 3016 British JJ ORG https://en.wikipedia.org/wiki/British_Empire
+247 253 3017 Empire NN ORG https://en.wikipedia.org/wiki/British_Empire
 253 254 3018 . .
 255 261 4001 Member NNP
 262 269 4002 nations NNS
