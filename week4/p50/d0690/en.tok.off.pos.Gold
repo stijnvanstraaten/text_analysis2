@@ -63,7 +63,7 @@
 355 359 3007 year NN
 360 364 3008 when WRB
 365 368 3009 the DT
-369 376 3010 islands NNS
+369 376 3010 islands NNS NAT https://en.wikipedia.org/wiki/Island
 377 383 3011 gained VBN
 384 396 3012 independence NN
 396 397 3013 . .
