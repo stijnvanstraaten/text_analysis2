@@ -19,8 +19,8 @@
 110 117 1019 attacks NNS
 118 124 1020 Monday NNP
 124 125 1021 . .
-126 129 2001 The DT ORG https://en.wikipedia.org/wiki/United_States_Armed_Forces
-130 138 2002 military JJ ORG https://en.wikipedia.org/wiki/United_States_Armed_Forces
+126 129 2001 The DT
+130 138 2002 military JJ
 139 143 2003 says VBZ
 144 147 2004 the DT
 148 154 2005 marine NN
@@ -46,8 +46,8 @@
 281 283 2025 of IN
 284 292 2026 Asadabad NN CIT https://en.wikipedia.org/wiki/Asadabad,_Afghanistan
 292 293 2027 . .
-294 297 3001 The DT ORG https://en.wikipedia.org/wiki/United_States_Armed_Forces
-298 306 3002 military JJ ORG https://en.wikipedia.org/wiki/United_States_Armed_Forces
+294 297 3001 The DT
+298 306 3002 military JJ
 307 311 3003 says VBZ
 312 315 3004 the DT
 316 323 3005 solider NN
