@@ -89,7 +89,7 @@
 530 535 5007 major JJ
 536 544 5008 violence NN
 545 552 5009 despite IN
-553 560 5010 Taleban NN https://en.wikipedia.org/wiki/Taliban
+553 560 5010 Taleban NN ORG https://en.wikipedia.org/wiki/Taliban
 561 568 5011 threats NNS
 569 571 5012 to TO
 572 579 5013 disrupt NN
