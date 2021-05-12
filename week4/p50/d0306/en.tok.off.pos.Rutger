@@ -65,9 +65,9 @@
 351 352 5014 . .
 353 354 6001 A DT
 355 360 6002 five- NN
-361 365 6003 time NN
+361 365 6003 time NN ORG https://en.wikipedia.org/wiki/Grammy_Awards
 366 372 6004 Grammy NN ORG https://en.wikipedia.org/wiki/Grammy_Awards
-373 378 6005 Award NN
+373 378 6005 Award NN ORG https://en.wikipedia.org/wiki/Grammy_Awards
 379 385 6006 winner NN
 385 386 6007 , ,
 387 392 6008 Usher NN PER https://en.wikipedia.org/wiki/Usher_(musician)
