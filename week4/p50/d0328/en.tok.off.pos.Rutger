@@ -44,7 +44,7 @@
 237 242 3014 heart NN
 243 249 3015 attack NN
 249 250 3016 . .
-251 254 4001 Mr. NNP PER PER https://en.wikipedia.org/wiki/Pascal_Yoadimnadji
+251 254 4001 Mr. NNP PER https://en.wikipedia.org/wiki/Pascal_Yoadimnadji
 255 266 4002 Yoadimnadji NN PER https://en.wikipedia.org/wiki/Pascal_Yoadimnadji
 267 270 4003 was VBD
 271 276 4004 named VBN
