@@ -51,8 +51,8 @@
 303 304 3008 a DT
 305 312 3009 meeting NN
 313 317 3010 with IN
-318 323 3011 Latin NN
-324 332 3012 American JJ
+318 323 3011 Latin NN NAT https://en.wikipedia.org/wiki/Latin_America
+324 332 3012 American JJ NAT https://en.wikipedia.org/wiki/Latin_America
 333 336 3013 and CC
 337 341 3014 Arab NN
 342 349 3015 leaders NNS
