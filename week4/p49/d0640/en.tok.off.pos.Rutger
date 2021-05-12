@@ -1,9 +1,9 @@
-0 3 1001 The DT
+0 3 1001 The DT ORG https://en.wikipedia.org/wiki/Fitch_Ratings
 4 9 1002 Fitch NN ORG https://en.wikipedia.org/wiki/Fitch_Ratings
 10 16 1003 rating NN ORG https://en.wikipedia.org/wiki/Fitch_Ratings
 17 23 1004 agency NN ORG https://en.wikipedia.org/wiki/Fitch_Ratings
 24 31 1005 slashed VBD
-32 34 1006 BP NN
+32 34 1006 BP NN ORG https://en.wikipedia.org/wiki/BP
 34 36 1007 's POS
 37 43 1008 credit NN
 44 50 1009 rating NN
@@ -38,7 +38,7 @@
 191 198 2003 leaders NNS
 199 202 2004 are VBP
 203 209 2005 asking VBG
-210 212 2006 BP NN
+210 212 2006 BP NN ORG https://en.wikipedia.org/wiki/BP
 213 215 2007 to TO
 216 219 2008 set NN
 220 225 2009 aside RB
