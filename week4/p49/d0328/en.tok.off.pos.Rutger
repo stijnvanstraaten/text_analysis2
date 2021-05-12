@@ -93,8 +93,8 @@
 526 535 7007 militants NNS
 536 540 7008 have VB
 541 547 7009 killed VBN
-548 554 7010 Afghan NNP COU https://en.wikipedia.org/wiki/Afghanistan
-555 561 7011 police NNS
+548 554 7010 Afghan NNP ORG https://en.wikipedia.org/wiki/Afghan_National_Police
+555 561 7011 police NNS ORG https://en.wikipedia.org/wiki/Afghan_National_Police 
 562 565 7012 and CC
 566 572 7013 troops NNS
 573 579 7014 during IN
