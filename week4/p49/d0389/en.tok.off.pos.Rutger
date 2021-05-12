@@ -25,16 +25,16 @@
 159 166 2004 marched VBN
 167 169 2005 in IN
 170 173 2006 the DT
-174 181 2007 Bel-air NN
-182 189 2008 section NN
+174 181 2007 Bel-air NN COU https://en.wikipedia.org/wiki/Bel_Air,_Haiti
+182 189 2008 section NN COU https://en.wikipedia.org/wiki/Bel_Air,_Haiti
 190 192 2009 of IN
 193 207 2010 Port-au-Prince NN CIT https://en.wikipedia.org/wiki/Port-au-Prince
 208 210 2011 to TO
 211 217 2012 demand NN
 218 221 2013 the DT
 222 228 2014 return NN
-229 232 2015 Mr. NNP COU https://en.wikipedia.org/wiki/Jean-Bertrand_Aristide
-233 241 2016 Aristide RB COU https://en.wikipedia.org/wiki/Jean-Bertrand_Aristide
+229 232 2015 Mr. NNP PER https://en.wikipedia.org/wiki/Jean-Bertrand_Aristide
+233 241 2016 Aristide RB PER https://en.wikipedia.org/wiki/Jean-Bertrand_Aristide
 241 242 2017 , ,
 243 246 2018 who WP
 247 250 2019 has VBZ
@@ -60,8 +60,8 @@
 355 357 3010 an DT
 358 370 3011 intersection NN
 371 373 3012 in IN
-374 378 3013 Bel- NN
-379 382 3014 air NN
+374 378 3013 Bel- NN COU https://en.wikipedia.org/wiki/Bel_Air,_Haiti
+379 382 3014 air NN COU https://en.wikipedia.org/wiki/Bel_Air,_Haiti
 382 383 3015 . .
 384 387 4001 Few JJ
 388 393 4002 other JJ
