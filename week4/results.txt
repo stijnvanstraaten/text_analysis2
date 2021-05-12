@@ -1,12 +1,17 @@
 # Huub exel, Rutger van der Hart, Stijn van Straaten
 # 12-05-2021
 
-Most difficult cases:
-
-
 Instructions to run measures.py:
 python3 measures.py [settings] [file name of first person] [file name of second person]
 settings: if you put "1" it will calculate the scores for all entities and if you put anything except for "1" you get the interesting vs non-interesting entities scores.
+
+Most difficult cases:
+Mediterranean islands was a hard case because we didn't know if we had to annotate it as the country malta or a natural place.
+Washington (city) vs Washington (state) was a hard case because it was hard to tell which one was being spoken of.
+It was also hard to decide how to annotate american (soldier) or korean (politician). Whether you annotate the country or not.
+It was also unclear if we had to annotate the literal words 'song' and 'rap' as entertainment.
+We didn't know whether we had to annotate the afghan-pakistani border. In the end we chose for a natural place.
+We also didn't know whether we had to annotate iTunes. In the end we chose to annotate it as an organization.
 
 Huub & Stijn, interesting vs non-interesting entities:
 
