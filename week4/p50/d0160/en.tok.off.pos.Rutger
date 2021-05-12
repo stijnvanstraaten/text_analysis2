@@ -52,8 +52,8 @@
 270 279 2019 somewhere RB
 280 284 2020 near IN
 285 288 2021 the DT
-289 305 2022 Afghan-Pakistani JJ COU https://en.wikipedia.org/wiki/Durand_Line
-306 312 2023 border NN COU https://en.wikipedia.org/wiki/Durand_Line
+289 305 2022 Afghan-Pakistani JJ NAT https://en.wikipedia.org/wiki/Durand_Line
+306 312 2023 border NN NAT https://en.wikipedia.org/wiki/Durand_Line
 312 313 2024 . .
 314 316 3001 In IN
 317 318 3002 a DT
