@@ -8,7 +8,7 @@
 39 43 1008 H5N1 NN
 44 50 1009 strain NN
 51 53 1010 of IN
-54 58 1011 bird NN
+54 58 1011 bird NN ANI https://en.wikipedia.org/wiki/Bird
 59 62 1012 flu NN
 63 68 1013 among IN
 69 74 1014 wilds NNS
