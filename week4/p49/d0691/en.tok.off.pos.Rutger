@@ -2,7 +2,7 @@
 8 15 1002 Indians NNS
 16 25 1003 inhabited VBN
 26 29 1004 the DT
-30 37 1005 islands NNS
+30 37 1005 islands NNS NAT https://en.wikipedia.org/wiki/Island
 38 42 1006 when WRB
 43 54 1007 Christopher NN PER https://en.wikipedia.org/wiki/Christopher_Columbus
 55 63 1008 COLUMBUS NN PER https://en.wikipedia.org/wiki/Christopher_Columbus
@@ -19,17 +19,17 @@
 112 114 1019 in IN
 115 119 1020 1492 CD
 119 120 1021 . .
-121 128 2001 British JJ
+121 128 2001 British JJ COU https://en.wikipedia.org/wiki/United_Kingdom
 129 139 2002 settlement NN
 140 142 2003 of IN
 143 146 2004 the DT
-147 154 2005 islands NNS
+147 154 2005 islands NNS NAT https://en.wikipedia.org/wiki/Island
 155 160 2006 began VBD
 161 163 2007 in IN
 164 168 2008 1647 CD
 168 169 2009 ; :
 170 173 2010 the DT
-174 181 2011 islands NNS
+174 181 2011 islands NNS NAT https://en.wikipedia.org/wiki/Island
 182 188 2012 became VBD
 189 190 2013 a DT
 191 197 2014 colony NN
@@ -80,7 +80,7 @@
 466 469 4020 the DT COU https://en.wikipedia.org/wiki/United_States
 470 472 4021 US NN COU https://en.wikipedia.org/wiki/United_States
 473 476 4022 and CC
-477 483 4023 Europe NNP
+477 483 4023 Europe NNP NAT https://en.wikipedia.org/wiki/Europe
 483 484 4024 , ,
 485 488 4025 and CC
 489 492 4026 its PRP$
