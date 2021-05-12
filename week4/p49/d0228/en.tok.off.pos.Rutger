@@ -19,12 +19,12 @@
 114 117 1019 the DT
 118 125 1020 remains NNS
 126 128 1021 of IN
-129 137 1022 American JJ
+129 137 1022 American JJ COU https://en.wikipedia.org/wiki/United_States
 138 147 1023 servicmen NNS
 148 155 1024 missing VBG
 156 160 1025 from IN
 161 164 1026 the DT
-165 171 1027 Korean JJ
+165 171 1027 Korean JJ COU https://en.wikipedia.org/wiki/Korea
 172 175 1028 War NNP
 175 176 1029 . .
 177 180 2001 Two CD
@@ -96,6 +96,6 @@
 563 566 5013 are VBP
 567 571 5014 from IN
 572 575 5015 the DT
-576 582 5016 Korean JJ
+576 582 5016 Korean JJ COU https://en.wikipedia.org/wiki/Korea
 583 586 5017 War NNP
 586 587 5018 . .
