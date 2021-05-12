@@ -10,10 +10,10 @@
 50 57 1010 Liberia NNS COU https://en.wikipedia.org/wiki/Liberia
 57 58 1011 , ,
 59 65 1012 Sierra NN COU https://en.wikipedia.org/wiki/Sierra_Leone
-66 71 1013 Leone NN  COU https://en.wikipedia.org/wiki/Sierra_Leone
+66 71 1013 Leone NN COU https://en.wikipedia.org/wiki/Sierra_Leone
 72 75 1014 and CC
 76 81 1015 Ivory NN COU https://en.wikipedia.org/wiki/Ivory_Coast
-82 87 1016 Coast NNP  COU https://en.wikipedia.org/wiki/Ivory_Coast
+82 87 1016 Coast NNP COU https://en.wikipedia.org/wiki/Ivory_Coast
 88 100 1017 destabilized VBN
 101 112 1018 neighboring VBG
 113 122 1019 southeast NN
@@ -85,5 +85,5 @@
 467 468 4009 N NN CIT https://en.wikipedia.org/wiki/Nz%C3%A9r%C3%A9kor%C3%A9
 468 477 4010 'Zerekore NN CIT https://en.wikipedia.org/wiki/Nz%C3%A9r%C3%A9kor%C3%A9
 478 480 4011 in IN
-481 487 4012 Guinea NN  COU https://en.wikipedia.org/wiki/Guinea
+481 487 4012 Guinea NN COU https://en.wikipedia.org/wiki/Guinea
 487 488 4013 . .
