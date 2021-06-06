@@ -91,7 +91,7 @@
 516 522 6006 Chavez NN PER https://en.wikipedia.org/wiki/Hugo_Ch%C3%A1vez
 523 528 6007 heads NNS
 529 531 6008 to TO
-532 536 6009 Asia NN NAT https://en.wikipedia.org/wiki/Asia
+532 536 6009 Asia NN COU https://en.wikipedia.org/wiki/Asia
 537 540 6010 for IN
 541 546 6011 talks NNS
 547 551 6012 with IN
