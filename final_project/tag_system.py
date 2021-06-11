@@ -64,18 +64,22 @@ def getwikilink(text, en_wiki):
             noun_list.append(line[3])
             
         elif noun_list != []:
+            # get all the existing combinations for a serie
             existing_combination = get_all_possibilities(noun_list, en_wiki)
             for combi in existing_combination:
                 synset = nltk.wsd.lesk(sentences[sentence_counter], combi, 'n')
+                # there is no synset for most persons so you cannot get a synset for those 
                 if synset is not None:
                     try:
+                        # if there is a more clear synonym for that word, use that.
                         disambiguated_word = synset.lemmas()[1].name()
                     except IndexError:
+                        # if the word does not really have a more clear synonym use the word itself.
                         disambiguated_word = synset.lemmas()[0].name()
                     page = en_wiki.page(disambiguated_word)
                 else:
                     page = en_wiki.page(combi)
-                summary = nltk.word_tokenize(page.summary)
+                summary = nltk.word_tokenize(page.summary) # get the wikipedia summary of the word in question.
                 score_dict = {}
                 for tag in tags:
                     for word in summary:
