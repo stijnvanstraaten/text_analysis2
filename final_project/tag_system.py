@@ -107,6 +107,9 @@ def getwikilink(text, en_wiki):
 
 
 def main():
+    # The system works with argv so you can use the terminal to put a file in that you want the system to work on.
+    # tag_system.py /home/stijn/textanalysis/final_roject/dev/p16/d0455/en.tok.pos.off > file_you_want_the_result_in
+    # The line above this one shows what we put in the terminal to make it work.
     with open(sys.argv[1], "r") as text_open:
         text = text_open.read()
         
