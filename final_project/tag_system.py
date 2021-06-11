@@ -18,7 +18,7 @@ def get_all_possibilities(noun_list, en_wiki):
     ....... and so on. It basically gives you every possibility of the serie.
     
     After this it checks if there exist a Wikipedia page for the existing combination and if so,
-    it will add that to the existing_combinations list and return that
+    it will add that to the existing_combinations list and return that.
     """
     
     length = len(noun_list)
@@ -41,12 +41,16 @@ def getwikilink(text, en_wiki):
                             ('NAT', {'island', 'lake', 'shore', 'mountain', 'sea', 'river', 'volcano', 'island'}),
                             ('SPO', {'sport', 'team', 'Olympic', 'points', 'championship', 'ball'})
             ]
-
-    noun_list = []
+    
+    noun_list = []                      # All the nouns that are in the text will end up in here
     text = text.rstrip().split("\n")
-    pos_off = []
+    pos_off = []                        # This is where the endresult will be put in
+    
+    # These two lines are used by Lesk
     sentence_counter = 0
     full_text = ""
+    
+    # this part is build so that Lesk can read the whole sentence
     for line2 in text:
         full_text += line2.split()[3] + " "
     sentences = nltk.sent_tokenize(full_text)
@@ -54,8 +58,11 @@ def getwikilink(text, en_wiki):
     for line in text:
         line = line.split()
         pos_off.append(line)
+        
+        # If the tag behind the word is either NN, NNP, NNPS or NNS, append it to the noun_list
         if line[4] == "NN" or line[4] == "NNP" or line[4] == "NNPS" or line[4] == "NNS":
             noun_list.append(line[3])
+            
         elif noun_list != []:
             existing_combination = get_all_possibilities(noun_list, en_wiki)
             for combi in existing_combination:
