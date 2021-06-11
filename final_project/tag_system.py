@@ -45,7 +45,8 @@ def getwikilink(text, en_wiki):
                             ('CIT', {'city', 'town', 'district', 'urban', 'population', 'capital', 'metropolitan', 'village', 'centre', 'suburbs', 'named', 'region', 'place', 'capital', 'cultural', 'commercial', 'regional'}),
                             ('ANI', {'aquatic vertebrate',  'saltwater fish', 'species', 'predator', 'mammal', 'fish', 'reptile', 'animal', 'herbivore', 'omnivore', 'carnivore'}),
                             ('NAT', {'island', 'lake', 'shore', 'mountain', 'sea', 'river', 'volcano'}),
-                            ('SPO', {'sport', 'team', 'Olympic', 'points', 'championship', 'ball'})
+                            ('SPO', {'sport', 'team', 'Olympic', 'points', 'championship', 'ball'}),
+                            ('ENT', {'book', 'album', 'single', 'copies', 'released', 'publiced', 'film', 'novel', 'success'})
             ]
     
     noun_list = []                      # All the nouns that are in the text will end up in here
