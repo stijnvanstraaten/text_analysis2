@@ -97,23 +97,30 @@ def getwikilink(text, en_wiki):
                                 # if this is the first +1 for that category (for this word) it adds
                                 # the category and sets the score to 1
                                 score_dict[tag[0]] = 1
-                score_list = []
-                summary_len = len(summary)
+                                
+                # for every category calculate what percentage of the page is used for that category               
+                score_list = [] 
                 for tag_dict_keys in score_dict.keys():
-                    score_list.append([tag_dict_keys, score_dict[tag_dict_keys]/summary_len])
-                winning_score = ["NON", 0]
+                    score_list.append([tag_dict_keys, score_dict[tag_dict_keys]/len(summary)])
+                
+                winning_score = ["NON", 0] # set the winning score to "NON", 0 so we can compare it below here
                 for score in score_list:
+                    # 0.015% is the benchmark to prove that it is even valid enough to be categorised as 1 of the 7
                     if score[1] > 0.015 and score[1] > winning_score[1]:
-                        winning_score = score
-                if winning_score[0] != "NON":
+                        winning_score = score # highest score becomes the winning score
+                if winning_score[0] != "NON": # check if the benchmark is met atleast once.
                     for i in range(2, len(noun_list) + 2):
                         if pos_off[-i][3] in combi and len(pos_off[-i]) < 6:
                             pos_off[-i].append(winning_score[0])
                             pos_off[-i].append(page.fullurl)
+                            
+            # This is to easily count the sentences for Lesk                
             if line[3] == ".":
                 sentence_counter += 1
 
             noun_list = []
+            
+    # prints every line to the file        
     for line in pos_off:
         print(" ".join(line))
 
