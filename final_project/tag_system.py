@@ -116,7 +116,7 @@ def getwikilink(text, en_wiki):
                     if score[1] > 0.015 and score[1] > winning_score[1]:
                         winning_score = score # highest score becomes the winning score
                 if winning_score[0] != "NON": # check if the benchmark is met atleast once.
-                    # This makes sure that the winning category and wikipediapage of that word is put into the right place
+                    # This makes sure that the winning category and Wikipedia page of that word is put into the right place
                     for i in range(2, len(noun_list) + 2):
                         if pos_off[-i][3] in combi and len(pos_off[-i]) < 6: # this also checks if there isn't already accidently a Wiki url
                             pos_off[-i].append(winning_score[0]) # adds the tag
@@ -136,7 +136,7 @@ def getwikilink(text, en_wiki):
 
 def main():
     # The system works with argv so you can use the terminal to put a file in that you want the system to work on.
-    # tag_system.py /home/stijn/textanalysis/final_roject/dev/p16/d0455/en.tok.pos.off > file_you_want_the_result_in
+    # tag_system.py /path/to/file/en.tok.pos.off > file_you_want_the_result_in
     # The line above this one shows what we put in the terminal to make it work.
     with open(sys.argv[1], "r") as text_open:
         text = text_open.read()
