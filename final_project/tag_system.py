@@ -32,8 +32,14 @@ def get_all_possibilities(noun_list, en_wiki):
 
 
 def getwikilink(text, en_wiki):
+    """
+    The system looks to the summary of the Wikipedia page to see if a (any sort of) noun
+    is either a Country/State, Person, Organisation, City/Town, Animal, Natural place or Sport.
+    And if the system decides if it is one of the 7 and has decided which one, it puts the tag
+    according to the right thing and the wikipedia page link at the end of the line.
+    """
     tags = [
-                            ('COU', {'federation', 'city', 'country', 'state', 'capital', 'democratic', 'population', 'continent', 'province', 'district', 'continent', 'America', 'Iraq', 'independence', 'kingdom', 'island', 'autonomous', 'agricultural', 'NATO', 'border', 'borders', 'empire', 'kingdoms', 'territory', 'nation', 'languages', 'republic'}),
+                            ('COU', {'federation', 'city', 'country', 'state', 'capital', 'democratic', 'population', 'continent', 'province', 'district', 'America', 'Iraq', 'independence', 'kingdom', 'island', 'autonomous', 'agricultural', 'NATO', 'border', 'borders', 'empire', 'kingdoms', 'territory', 'nation', 'languages', 'republic'}),
                             ('PER', {'he', 'she', 'born', 'friend', 'childhood', 'child', 'his', 'her', 'minister', 'politician', 'death', "Saddam"}),
                             ('ORG', {'organization', 'organisation', 'union', 'founded', 'business', 'corporation', 'administration', 'ideology', 'community', 'government', 'group', 'party'}),
                             ('CIT', {'city', 'town', 'district', 'urban', 'population', 'capital', 'metropolitan', 'village', 'centre', 'suburbs', 'named', 'region', 'place', 'capital', 'cultural', 'commercial', 'regional'}),
@@ -109,10 +115,11 @@ def getwikilink(text, en_wiki):
                     if score[1] > 0.015 and score[1] > winning_score[1]:
                         winning_score = score # highest score becomes the winning score
                 if winning_score[0] != "NON": # check if the benchmark is met atleast once.
+                    # This makes sure that the winning category and wikipediapage of that word is put into the right place
                     for i in range(2, len(noun_list) + 2):
-                        if pos_off[-i][3] in combi and len(pos_off[-i]) < 6:
-                            pos_off[-i].append(winning_score[0])
-                            pos_off[-i].append(page.fullurl)
+                        if pos_off[-i][3] in combi and len(pos_off[-i]) < 6: # this also checks if there isn't already accidently a Wiki url
+                            pos_off[-i].append(winning_score[0]) # adds the tag
+                            pos_off[-i].append(page.fullurl) # adds the url
                             
             # This is to easily count the sentences for Lesk                
             if line[3] == ".":
