@@ -5,7 +5,7 @@ from itertools import combinations
 
 def get_all_possibilities(noun_list, en_wiki):
     """
-    This takes a serie with NN (or NNP and so on) words and splits them into every possible order.
+    This takes a serie with NN (or NNP, NNPS, NNS) words and splits them into every possible order.
     Example: you have the serie, 1 2 3 4     (I know these are not NN but it's just for the example)
     What this gives you is:
     1 2 3 4
@@ -38,7 +38,7 @@ def getwikilink(text, en_wiki):
                             ('ORG', {'organization', 'organisation', 'union', 'founded', 'business', 'corporation', 'administration', 'ideology', 'community', 'government', 'group', 'party'}),
                             ('CIT', {'city', 'town', 'district', 'urban', 'population', 'capital', 'metropolitan', 'village', 'centre', 'suburbs', 'named', 'region', 'place', 'capital', 'cultural', 'commercial', 'regional'}),
                             ('ANI', {'aquatic vertebrate',  'saltwater fish', 'species', 'predator', 'mammal', 'fish', 'reptile', 'animal', 'herbivore', 'omnivore', 'carnivore'}),
-                            ('NAT', {'island', 'lake', 'shore', 'mountain', 'sea', 'river', 'volcano', 'island'}),
+                            ('NAT', {'island', 'lake', 'shore', 'mountain', 'sea', 'river', 'volcano'}),
                             ('SPO', {'sport', 'team', 'Olympic', 'points', 'championship', 'ball'})
             ]
     
@@ -74,19 +74,28 @@ def getwikilink(text, en_wiki):
                         # if there is a more clear synonym for that word, use that.
                         disambiguated_word = synset.lemmas()[1].name()
                     except IndexError:
-                        # if the word does not really have a more clear synonym use the word itself.
+                        # if the word does not really have a more clear synonym, use the word itself.
                         disambiguated_word = synset.lemmas()[0].name()
                     page = en_wiki.page(disambiguated_word)
                 else:
                     page = en_wiki.page(combi)
-                summary = nltk.word_tokenize(page.summary) # get the wikipedia summary of the word in question.
+                    
+                summary = nltk.word_tokenize(page.summary) # get the wikipedia summary of the word.
+                
+                # This keeps track of the amount of tags that are found in the summary of the word and
+                # it does this for each of the 7 categories seperate.
                 score_dict = {}
+                
+                # if one of the words in the summary is in one of the 7 "tags" (categories) it does +1
+                # for that category in the score_dict
                 for tag in tags:
                     for word in summary:
                         if word in tag[1]:
                             if tag[0] in score_dict.keys():
                                 score_dict[tag[0]] += 1
                             else:
+                                # if this is the first +1 for that category (for this word) it adds
+                                # the category and sets the score to 1
                                 score_dict[tag[0]] = 1
                 score_list = []
                 summary_len = len(summary)
