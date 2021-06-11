@@ -1,9 +1,26 @@
-import wikipediaapi as wa
+import wikipediaapi as wa                   # we found that this wikipedia api worked better than the one we got in class
 import nltk
 import sys
 from itertools import combinations
 
 def get_all_possibilities(noun_list, en_wiki):
+    """
+    This takes a serie with NN (or NNP and so on) words and splits them into every possible order.
+    Example: you have the serie, 1 2 3 4     (I know these are not NN but it's just for the example)
+    What this gives you is:
+    1 2 3 4
+    1 2 3
+    1 2 4
+    1 3 4
+    2 3 4
+    1 2
+    1 3
+    ....... and so on. It basically gives you every possibility of the serie.
+    
+    After this it checks if there exist a Wikipedia page for the existing combination and if so,
+    it will add that to the existing_combinations list and return that
+    """
+    
     length = len(noun_list)
     existing_combinations = []
     for L in range(length, 0, -1):
@@ -85,8 +102,11 @@ def getwikilink(text, en_wiki):
 def main():
     with open(sys.argv[1], "r") as text_open:
         text = text_open.read()
-    en_wiki = wa.Wikipedia("en")
+        
+    # This line makes sure that we get the english Wikipedia page of that what we are searching    
+    en_wiki = wa.Wikipedia("en")                
 
+    # The big function where the magic happens.
     getwikilink(text, en_wiki)
 
 
